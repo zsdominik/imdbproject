@@ -1,15 +1,15 @@
 package com.example.imdb.model;
 
+
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
 @Entity
-public class Movie {
+public class Tvseries {
     @Id
     @GeneratedValue
     private String id;
@@ -18,4 +18,5 @@ public class Movie {
     private String description;
     private Double rating;
     private Genre genre = Genre.ACTION;
+    private Boolean finished=Boolean.TRUE;
 }
