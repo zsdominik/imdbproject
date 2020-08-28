@@ -15,6 +15,7 @@ public class TvseriesService {
     public TvseriesService(TvseriesRepository tvseriesRepository) {
         this.tvseriesRepository = tvseriesRepository;
     }
+
     public List<Tvseries> getAllSeries() {
         // TODO business logic
         return tvseriesRepository.findAll();
