@@ -19,6 +19,7 @@ public class MovieController {
 
     @GetMapping("/movies")
     public List<Movie> getAllMovies() {
+
         return movieService.getAllMovies();
     }
 
@@ -27,8 +28,8 @@ public class MovieController {
         return movieService.getMovie(id);
     }
 
-    @PostMapping("/movies/save")
-    public void saveMovie(Movie movie) {
-        movieService.saveMovie(movie);
+    @PostMapping("/movies")
+    public void createMovie(Movie movie) {
+        movieService.createMovie(movie);
     }
 }

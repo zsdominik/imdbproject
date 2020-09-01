@@ -15,22 +15,24 @@ public class MovieService {
     public MovieService(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
-
+    //get movies
     public List<Movie> getAllMovies() {
-        // TODO business logic
         return movieRepository.findAll();
     }
-
-    public void saveMovie(Movie movie) {
-        movieRepository.save(movie);
-    }
-
+    //get movie by id
     public Movie getMovie(String id) {
         return movieRepository.findById(id).get();
     }
+    //save movie
+    public void createMovie(Movie movie) {
+        movieRepository.save(movie);
+    }
 
+    //update movie
+
+
+    //delete movie
     public void deleteMovie(String id) {
         movieRepository.deleteById(id);
     }
-
 }
