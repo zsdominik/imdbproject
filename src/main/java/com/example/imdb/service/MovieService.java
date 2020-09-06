@@ -23,13 +23,25 @@ public class MovieService {
         return movieRepository.findById(id).get();
     }
     //save movie
-    public void createMovie(Movie movie) {
-        movieRepository.save(movie);
+    public Movie createMovie(Movie movie) {
+        return movieRepository.save(movie);
     }
 
     //update movie
-
-
+    public Movie updateMovie(Movie newMovie, String id){
+        return movieRepository.findById(id)
+                .map(movie -> {
+                    movie.setTitle(newMovie.getTitle());
+                    movie.setRelease(newMovie.getRelease());
+                    movie.setDescription(newMovie.getDescription());
+                    movie.setRating(newMovie.getRating());
+                    return movieRepository.save(newMovie);
+            })
+                .orElseGet(()->{
+                    newMovie.setId(id);
+                    return movieRepository.save(newMovie);
+                });
+        }
     //delete movie
     public void deleteMovie(String id) {
         movieRepository.deleteById(id);

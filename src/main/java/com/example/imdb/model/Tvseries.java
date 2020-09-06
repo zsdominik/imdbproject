@@ -2,6 +2,7 @@ package com.example.imdb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.Value;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -11,16 +12,16 @@ import java.util.HashSet;
 import javax.persistence.Column;
 import java.util.Set;
 
-@Data
+@Value
 @Entity
 public class Tvseries extends BaseMedia {
     @Column(name = "isfinished",columnDefinition = "boolean default true")
-    private Boolean isFinished;
+    Boolean isFinished;
     @JsonIgnore
     @ManyToMany
     @JoinTable(
             name = "Tvseries_genre",
             joinColumns = {@JoinColumn(name = "tvseries_id")},
             inverseJoinColumns = {@JoinColumn(name = "genre_id")})
-    private Set<Genre> genretypes = new HashSet<>();
+    Set<Genre> genretypes = new HashSet<>();
 }

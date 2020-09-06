@@ -17,13 +17,13 @@ import java.util.Set;
 public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    String id;
     @Column(nullable = false)
-    private String name;
+    String name;
     @JsonIgnore
     @ManyToMany(mappedBy = "genres")
-    private Set<Movie> movies = new HashSet<>();
+    Set<Movie> movies = new HashSet<>();
     @JsonIgnore
     @ManyToMany(mappedBy = "genretypes")
-    private Set<Tvseries> tvseries = new HashSet<>();
+    Set<Tvseries> tvseries = new HashSet<>();
 }

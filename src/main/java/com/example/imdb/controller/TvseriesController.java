@@ -11,7 +11,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/tvseries")
 public class TvseriesController {
 
     private final TvseriesService tvseriesService;
@@ -20,7 +20,7 @@ public class TvseriesController {
         this.tvseriesService = tvseriesService;
     }
 
-    @GetMapping("/tvseries")
+    @GetMapping("/")
     public List<Tvseries> getAllSeries() {
         return tvseriesService.getAllSeries();
     }
