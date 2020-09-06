@@ -2,7 +2,10 @@ package com.example.imdb.controller;
 
 import com.example.imdb.model.Movie;
 import com.example.imdb.service.MovieService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -20,15 +23,5 @@ public class MovieController {
     @GetMapping("/movies")
     public List<Movie> getAllMovies() {
         return movieService.getAllMovies();
-    }
-
-    @GetMapping("/movies/{id}")
-    public Movie getMovie(@PathVariable String id) {
-        return movieService.getMovie(id);
-    }
-
-    @PostMapping("/movies/save")
-    public void saveMovie(Movie movie) {
-        movieService.saveMovie(movie);
     }
 }

@@ -1,26 +1,25 @@
 package com.example.imdb.model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.*;
-import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Data
 @Entity
-public class Movie {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
-    private String title;
-    private LocalDate release;
-    private String description;
-    private Double rating;
+public class Movie extends BaseMedia {
+    @JsonIgnore
     @ManyToMany
-    @JoinTable(name = "Movie_genre",
+    @JoinTable(
+            name = "Movie_genre",
             joinColumns = {@JoinColumn(name = "movie_id")},
             inverseJoinColumns = {@JoinColumn(name = "genre_id")})
     private Set<Genre> genres = new HashSet<>();
+
 }
