@@ -1,23 +1,29 @@
 package com.example.imdb.model;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Value;
 
-import javax.annotation.processing.Generated;
-import javax.persistence.*;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.ManyToMany;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Value
 @Entity
 public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
-    @Enumerated(EnumType.STRING)
-    private EGenre name;
+    @Column(nullable = false)
+    private String name;
+    @JsonIgnore
     @ManyToMany(mappedBy = "genres")
-    private Set<Movie> Movies = new HashSet<>();
-
+    private Set<Movie> movies = new HashSet<>();
+    @JsonIgnore
     @ManyToMany(mappedBy = "genretypes")
-    private Set<Tvseries> Tvseries = new HashSet<>();
+    private Set<Tvseries> tvseries = new HashSet<>();
 }

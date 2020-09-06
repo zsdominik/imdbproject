@@ -2,7 +2,6 @@ package com.example.imdb.service;
 
 import com.example.imdb.model.Movie;
 import com.example.imdb.repository.MovieRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
