@@ -2,7 +2,10 @@ package com.example.imdb.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+<<<<<<< HEAD
 import lombok.Data;
+=======
+>>>>>>> task/dummy-data-added
 import lombok.Value;
 
 import javax.persistence.Entity;

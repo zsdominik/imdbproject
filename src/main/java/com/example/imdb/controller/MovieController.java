@@ -24,6 +24,7 @@ public class MovieController {
     }
 
     @GetMapping("/")
+<<<<<<< HEAD
     public List<Movie> getAllMovies() { return movieService.getAllMovies(); }
 
     @GetMapping("/{id}")
@@ -34,6 +35,10 @@ public class MovieController {
     @PostMapping("/")
     public Movie createMovie(Movie movie) {
         return movieService.createMovie(movie);
+=======
+    public List<Movie> getAllMovies() {
+        return movieService.getAllMovies();
+>>>>>>> task/dummy-data-added
     }
 
 }
