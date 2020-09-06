@@ -2,6 +2,7 @@ package com.example.imdb.service;
 
 import com.example.imdb.model.Movie;
 import com.example.imdb.repository.MovieRepository;
+import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class MovieService {
     public Movie getMovie(String id) {
         return movieRepository.findById(id).get();
     }
-    //save movie
+    //create movie
     public Movie createMovie(Movie movie) {
         return movieRepository.save(movie);
     }
