@@ -2,11 +2,9 @@ package com.example.imdb.controller;
 
 import com.example.imdb.model.Movie;
 import com.example.imdb.service.MovieService;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +22,10 @@ public class MovieController {
     }
 
     @GetMapping("/")
-<<<<<<< HEAD
-    public List<Movie> getAllMovies() { return movieService.getAllMovies(); }
+
+    public List<Movie> getAllMovies() {
+        return movieService.getAllMovies();
+    }
 
     @GetMapping("/{id}")
     public Movie getMovie(@PathVariable String id) {
@@ -35,10 +35,5 @@ public class MovieController {
     @PostMapping("/")
     public Movie createMovie(Movie movie) {
         return movieService.createMovie(movie);
-=======
-    public List<Movie> getAllMovies() {
-        return movieService.getAllMovies();
->>>>>>> task/dummy-data-added
     }
-
 }
