@@ -11,7 +11,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/movies")
 public class MovieController {
 
     private final MovieService movieService;
@@ -20,7 +20,7 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    @GetMapping("/movies")
+    @GetMapping("/")
     public List<Movie> getAllMovies() {
         return movieService.getAllMovies();
     }
