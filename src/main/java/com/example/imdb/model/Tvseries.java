@@ -23,4 +23,5 @@ public class Tvseries extends BaseMedia {
             joinColumns = {@JoinColumn(name = "tvseries_id")},
             inverseJoinColumns = {@JoinColumn(name = "genre_id")})
     Set<Genre> genretypes = new HashSet<>();
+    //joskapista
 }
