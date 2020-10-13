@@ -1,10 +1,10 @@
 package com.example.imdb.model;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
 import javax.persistence.MappedSuperclass;
@@ -13,7 +13,8 @@ import javax.persistence.MappedSuperclass;
 @Data
 public class BaseMedia {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
     @Column(nullable = false)
     private String title;

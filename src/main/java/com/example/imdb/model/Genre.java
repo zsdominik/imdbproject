@@ -2,10 +2,10 @@ package com.example.imdb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Value;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Id;
 import javax.persistence.Entity;
-import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Column;
 import javax.persistence.ManyToMany;
@@ -16,7 +16,8 @@ import java.util.Set;
 @Entity
 public class Genre {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     String id;
     @Column(nullable = false)
     String name;

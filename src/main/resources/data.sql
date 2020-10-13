@@ -11,7 +11,7 @@ VALUES  ('1','Becket', '1965-10-08','Who is the king?!', 7.3),
         ('10','Hey dude, its april 1', '1999-06-16', 'Your family become ur enemies', 2.9);
 
 
-INSERT INTO TVSERIES (id, title, release, description, rating, isfinished)
+INSERT INTO TVSERIES (id, title, release, description, rating, isFinished)
 VALUES ('1','Vampire diaries','2010-11-11','Vampires around us',1.7,1),
        ('2','Chernobyl','2017-12-10','Come together as one',9.1,0),
        ('3','Teletabis','1998-01-02','Oh no! The robo-hoover ate the cookies',10.0,1),

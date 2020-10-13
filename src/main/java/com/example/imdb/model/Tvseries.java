@@ -14,8 +14,8 @@ import java.util.Set;
 @Value
 @Entity
 public class Tvseries extends BaseMedia {
-    @Column(name = "isfinished",columnDefinition = "boolean default true")
-    Boolean isFinished;
+    @Column(name = "ISFINISHED")
+    Boolean isFinished = false;
     @JsonIgnore
     @ManyToMany
     @JoinTable(
